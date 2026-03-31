@@ -6,7 +6,11 @@ export function Footer() {
           {/* Brand */}
           <div className="md:col-span-2">
             <a href="/" className="inline-block mb-6">
-              <img src="/images/hously-logo.svg" alt="Пространство" width={120} height={32} className="w-auto h-6" />
+              <img
+                src="https://cdn.poehali.dev/projects/01898121-4029-47f7-afe1-91bb7e05c475/bucket/2c3d0ff4-e05e-457f-b204-ab5ae5d20568.png"
+                alt="ЯР Камень"
+                className="w-auto h-12"
+              />
             </a>
             <p className="text-muted-foreground leading-relaxed max-w-sm">
               Студия изделий из натурального камня. Столешницы, порталы, ванные, лестницы — под ваши размеры и вкус.
