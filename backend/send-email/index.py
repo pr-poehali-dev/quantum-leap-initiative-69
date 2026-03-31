@@ -29,9 +29,9 @@ def handler(event: dict, context) -> dict:
             "body": json.dumps({"error": "Имя и телефон обязательны"}, ensure_ascii=False),
         }
 
-    smtp_password = os.environ.get("SMTP_PASSWORD", "")
-    from_email = "yarankin63@gmail.com"
-    to_email = "yarankin63@gmail.com"
+    smtp_password = os.environ.get("YANDEX_SMTP_PASSWORD", "")
+    from_email = "alexei.yarankin@yandex.ru"
+    to_email = "alexei.yarankin@yandex.ru"
 
     html_body = f"""
     <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
@@ -60,7 +60,7 @@ def handler(event: dict, context) -> dict:
     msg["To"] = to_email
     msg.attach(MIMEText(html_body, "html"))
 
-    with smtplib.SMTP_SSL("smtp.gmail.com", 465) as server:
+    with smtplib.SMTP_SSL("smtp.yandex.ru", 465) as server:
         server.login(from_email, smtp_password)
         server.sendmail(from_email, to_email, msg.as_string())
 
